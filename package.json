@@ -1,0 +1,32 @@
+{
+  "name": "Design_Talent_App",
+  "version": "1.0.0",
+  "description": "Find The Best Design Talent",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "cd client && npm run start",
+    "start": "./node_modules/.bin/concurrently \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installDeps": "yarn && cd client && yarn"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "amazon-cognito-auth-js": "^1.2.4",
+    "amazon-cognito-identity-js": "^2.0.21",
+    "aws-amplify-react": "^1.0.6",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "mongoose": "^5.0.12",
+    "morgan": "^1.9.0"
+  }
+}
